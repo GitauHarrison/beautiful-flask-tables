@@ -23,7 +23,29 @@ def ajax_table():
 @app.route('/api/data')
 @login_required
 def api_data():
-    return {'data': [admin.to_dict() for admin in Admin.query.all()]}
+    query = Admin.query
+
+    # Search filter
+    search = request.args.get('search[value]')
+    if search:
+        query = query.filter(db.or_(
+            Admin.username.like(f'%{search}%'),
+            Admin.email.like(f'%{search}%')
+        ))
+    total_filtered = query.count()
+
+    # pagination
+    start = request.args.get('start', type=int)
+    length = request.args.get('length', type=int)
+    query = query.offset(start).limit(length)
+
+    # response
+    return {
+        'data': [user.to_dict() for user in query],
+        'recordsFiltered': total_filtered,
+        'recordsTotal': User.query.count(),
+        'draw': request.args.get('draw', type=int),
+    }
 
 
 @app.route('/login', methods=['GET', 'POST'])
