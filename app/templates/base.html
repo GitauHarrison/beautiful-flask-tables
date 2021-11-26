@@ -59,7 +59,15 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.js"></script>
     <script>
         $(document).ready(function(){
-            $('#data').DataTable();
+            $('#data').DataTable({
+                columns: [
+                    null,
+                    {searchable: false},
+                    {orderable: false, searchable: false},
+                    {orderable: false, searchable: false},
+                    null
+                ],
+            });
         });
     </script>
 {% endblock %}
