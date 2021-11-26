@@ -7,23 +7,21 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Age</th>
                 <th>Email</th>
-                <th>Admin</th>
-                <th>Active</th>
-                <th>Created</th>
-                <th>Updated</th>
+                <th>Address</th>
+                <th>Phone Number</th>
             </tr>
         </thead>
         <tbody>
             {% for admin in admins %}
                 <tr>
                     <td>{{ admin.id }}</td>
-                    <td>{{ admin.adminname }}</td>
+                    <td>{{ admin.username }}</td>
+                    <td>{{ admin.age }}</td>
                     <td>{{ admin.email }}</td>
-                    <td>{{ admin.is_admin }}</td>
-                    <td>{{ admin.is_active }}</td>
-                    <td>{{ admin.created_at }}</td>
-                    <td>{{ admin.updated_at }}</td>
+                    <td>{{ admin.address }}</td>
+                    <td>{{ admin.phone}}</td>
                 </tr>
             {% endfor %}
         </tbody>
