@@ -62,7 +62,7 @@
     <script>
         $(document).ready(function () {
         $('#data').DataTable({
-            ajax: '/api/data',
+            ajax: '{{ url_for('api_data') }}',
             serverSide: true,
             columns: [
             {data: 'id'},
