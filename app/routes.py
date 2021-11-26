@@ -7,11 +7,17 @@ from app.models import Admin, User
 
 
 @app.route('/')
-@app.route('/index')
+@app.route('/basic-table')
 @login_required
-def index():
+def basic_table():
     admins = Admin.query.all()
-    return render_template('index.html', title='Home', admins=admins)
+    return render_template('basic-table.html', title='Basic Table', admins=admins)
+
+
+@app.route('/ajax-table', methods=['GET', 'POST'])
+@login_required
+def ajax_table():
+    return render_template('ajax-table.html', title='Ajax Table')
 
 
 @app.route('/login', methods=['GET', 'POST'])

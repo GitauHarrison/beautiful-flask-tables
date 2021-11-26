@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+    <h1>Ajax Table</h1>
+    <table id="data" class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for admin in admins %}
+                <tr>
+                    <td>{{ admin.id }}</td>
+                    <td>{{ admin.username }}</td>
+                    <td>{{ admin.age }}</td>
+                    <td>{{ admin.email }}</td>
+                    <td>{{ admin.address }}</td>
+                    <td>{{ admin.phone}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

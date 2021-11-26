@@ -30,6 +30,15 @@ class Admin(db.Model):
     address = db.Column(db.String(256), index=True)
     phone = db.Column(db.String(64), index=True)
 
+    def to_dict(self):
+        return {
+            'username': self.username,
+            'email': self.email,
+            'age': self.age,
+            'address': self.address,
+            'phone': self.phone
+        }
+
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
