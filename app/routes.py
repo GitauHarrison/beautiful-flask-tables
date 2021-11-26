@@ -20,6 +20,12 @@ def ajax_table():
     return render_template('ajax-table.html', title='Ajax Table')
 
 
+@app.route('/api/data')
+@login_required
+def api_data():
+    return {'data': [admin.to_dict() for admin in Admin.query.all()]}
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
