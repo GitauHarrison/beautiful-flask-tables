@@ -1,9 +1,9 @@
 from flask import render_template, flash, redirect, url_for, request
 from werkzeug.urls import url_parse
 from app import app, db
-from app.forms import LoginForm, RegistrationForm
+from app.forms import LoginForm, RegistrationForm, AdminForm
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User
+from app.models import Admin, User
 
 
 @app.route('/')
@@ -60,3 +60,26 @@ def register():
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
+
+
+@app.route('/user/<username>/admin')
+@login_required
+def admin(username):
+    user = User.query.filter_by(username=current_user.username).first_or_404()
+    form = AdminForm()
+    if form.validate_on_submit():
+        admin = Admin(
+            username=form.username.data,
+            email=form.email.data,
+            age=form.age.data,
+            address=form.address.data,
+            phone=form.phone.data
+            )
+        db.session.add(admin)
+        db.session.commit()
+        flash('You have added a new admin')
+        return redirect(url_for('index'))
+    return render_template('adminform.html',
+                           user=user,
+                           form=form
+                           )
