@@ -62,12 +62,14 @@
     <script>
         $(document).ready(function(){
             $('#data').DataTable({
+                ajax: '{{ url_for('api_data') }}',
                 columns: [
-                    null,
-                    {searchable: false},
-                    {orderable: false, searchable: false},
-                    {orderable: false, searchable: false},
-                    null
+                    {data: 'id'},
+                    {data: 'username'},
+                    {data: 'age', searchable: false},
+                    {data: 'email'},
+                    {data: 'address', orderable: false, searchable: false},
+                    {data: 'phone', orderable: false, searchable: false},
                 ],
             });
         });
