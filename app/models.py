@@ -22,6 +22,15 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 
 
+class Admin(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(64), index=True)
+    email = db.Column(db.String(128), index=True)
+    age = db.Column(db.Integer, index=True)
+    address = db.Column(db.String(256), index=True)
+    phone = db.Column(db.String(64), index=True)
+
+
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(140))
