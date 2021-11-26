@@ -32,6 +32,7 @@ class Admin(db.Model):
 
     def to_dict(self):
         return {
+            'id': self.id,
             'username': self.username,
             'email': self.email,
             'age': self.age,
