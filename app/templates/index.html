@@ -2,7 +2,30 @@
 
 {% block app_content %}
     <h1>Hi, {{ current_user.username }}!</h1>
-    {% for post in posts %}
-        <p><b>{{ post.author.username }} says:</b> {{ post.body }}</p>
-    {% endfor %}
+    <table id="data" class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Admin</th>
+                <th>Active</th>
+                <th>Created</th>
+                <th>Updated</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for admin in admins %}
+                <tr>
+                    <td>{{ admin.id }}</td>
+                    <td>{{ admin.adminname }}</td>
+                    <td>{{ admin.email }}</td>
+                    <td>{{ admin.is_admin }}</td>
+                    <td>{{ admin.is_active }}</td>
+                    <td>{{ admin.created_at }}</td>
+                    <td>{{ admin.updated_at }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

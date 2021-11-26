@@ -10,17 +10,8 @@ from app.models import Admin, User
 @app.route('/index')
 @login_required
 def index():
-    posts = [
-        {
-            'author': {'username': 'Rahima'},
-            'body': 'This is a test'
-        },
-        {
-            'author': {'username': 'Gitau'},
-            'body': 'This is another test'
-        }
-    ]
-    return render_template('index.html', title='Home', posts=posts)
+    admins = Admin.query.all()
+    return render_template('index.html', title='Home', admins=admins)
 
 
 @app.route('/login', methods=['GET', 'POST'])
