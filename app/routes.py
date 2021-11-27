@@ -4,6 +4,7 @@ from app import app, db
 from app.forms import LoginForm, RegistrationForm, AdminForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import Admin, User
+from create_fake_users import create_fake_users
 
 
 @app.route('/')
@@ -11,12 +12,14 @@ from app.models import Admin, User
 @login_required
 def basic_table():
     admins = Admin.query.all()
+    create_fake_users(2000)
     return render_template('basic-table.html', title='Basic Table', admins=admins)
 
 
 @app.route('/ajax-table', methods=['GET', 'POST'])
 @login_required
 def ajax_table():
+    create_fake_users(2000)
     return render_template('ajax-table.html', title='Ajax Table')
 
 
