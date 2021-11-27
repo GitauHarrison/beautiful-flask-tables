@@ -70,7 +70,7 @@ def api_data():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('index'))
+        return redirect(url_for('basic_table'))
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
@@ -88,13 +88,13 @@ def login():
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return redirect(url_for('basic_table'))
 
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
-        return redirect(url_for('index'))
+        return redirect(url_for('basic_table'))
     form = RegistrationForm()
     if form.validate_on_submit():
         user = User(username=form.username.data, email=form.email.data)
@@ -122,7 +122,7 @@ def admin(username):
         db.session.add(admin)
         db.session.commit()
         flash('You have added a new admin')
-        return redirect(url_for('index'))
+        return redirect(url_for('basic_table'))
     return render_template('adminform.html',
                            user=user,
                            form=form
