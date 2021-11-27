@@ -78,3 +78,7 @@ If you are interested in testing the application, you can use the following comm
     - [x] [Chrome](http://127.0.0.1:5000/)
     - [x] [Firefox](http://127.0.0.1:5000/)
     - [x] [Safari](http://127.0.0.1:5000/)
+
+### Reference
+
+- [Interactive Flask Templates](https://blog.miguelgrinberg.com/post/beautiful-interactive-tables-for-your-flask-templates)
