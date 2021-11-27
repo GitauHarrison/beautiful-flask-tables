@@ -67,7 +67,7 @@ If you are interested in testing the application, you can use the following comm
 
 4. Install dependencies:
 
-`$ pip install -r requirements.txt`
+`$ pip3 install -r requirements.txt`
 
 5. Run the application:
 
