@@ -3,6 +3,7 @@
 {% block head %}
     {{  super() }}
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.css">
+    <link rel="stylesheet" type="text/css" href=" {{ url_for('static', filename='styles.css') }} ">
 {% endblock %}
 
 {% block title %}
