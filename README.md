@@ -49,6 +49,10 @@ The use of Ajax helps to solve this problem. The table is loaded in chunks of da
 
 ![Searching in Ajax Table](app/static/search_alex.png)
 
+### Deployed Application
+
+- [x] [Flask Table App](https://beautiful-flask-tables.herokuapp.com/) on Heroku
+
 ### Testing
 
 If you are interested in testing the application, you can use the following commands to run the application:
