@@ -48,3 +48,33 @@ The biggest shortcoming of the basic table, which simply shows all the user data
 The use of Ajax helps to solve this problem. The table is loaded in chunks of data, which is then displayed on the screen. Also, searching is conviniently done on the server side. This improves the performance of the application. A user can search for a specific word or phrase in the entire table in an instant, without waiting for several seconds for Python to load the searched data.
 
 ![Searching in Ajax Table](app/static/search_alex.png)
+
+### Testing
+
+If you are interested in testing the application, you can use the following commands to run the application:
+
+1. Clone this repository:
+
+`$ git clone git@github.com:GitauHarrison/beautiful-flask-tables.git`
+
+2. Change directory to access the application:
+
+`$ cd beautiful-flask-tables`
+
+3. Create and activate the virtual environment:
+
+`$ mkvirtualenv flask-tables`
+
+4. Install dependencies:
+
+`$ pip install -r requirements.txt`
+
+5. Run the application:
+
+`$ flask run`
+
+6. Open the application in your browser running on local port 5000:
+
+    - [x] [Chrome](http://127.0.0.1:5000/)
+    - [x] [Firefox](http://127.0.0.1:5000/)
+    - [x] [Safari](http://127.0.0.1:5000/)
