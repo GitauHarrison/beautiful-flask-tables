@@ -34,6 +34,25 @@ def api_data():
         ))
     total_filtered = query.count()
 
+    # Sorting
+    order = []
+    i = 0
+    while True:
+        col_index = request.args.get(f'order[{i}][column]')
+        if col_index is None:
+            break
+        col_name = request.args.get(f'columns[{col_index}][data]')
+        if col_name not in ['username', 'age', 'email']:
+            col_name = 'username'
+        descending = request.args.get(f'order[{i}][dir]') == 'desc'
+        col = getattr(Admin, col_name)
+        if descending:
+            col = col.desc()
+        order.append(col)
+        i += 1
+    if order:
+        query = query.order_by(*order)
+
     # pagination
     start = request.args.get('start', type=int)
     length = request.args.get('length', type=int)
@@ -61,7 +80,7 @@ def login():
         login_user(user, remember=form.remember_me.data)
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
-            next_page = url_for('index')
+            next_page = url_for('basic_table')
         return redirect(next_page)
     return render_template('login.html', title='Sign In', form=form)
 
