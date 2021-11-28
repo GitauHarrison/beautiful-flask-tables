@@ -5,16 +5,16 @@ RUN adduser -D table
 WORKDIR /home/software_development/python/current_projects/beautiful_flask_tables
 COPY requirements.txt requirements.txt
 
-RUN python -m venv official_personal_website
+RUN python -m venv beautiful_flask_tables
 
-RUN official_personal_website/bin/python -m pip install --upgrade pip
+RUN beautiful_flask_tables/bin/python -m pip install --upgrade pip
 
 RUN \
     apk update && \
     apk add build-base && \ 
     apk add postgresql-dev gcc python3-dev musl-dev && \
-    official_personal_website/bin/pip3 install -r requirements.txt && \
-    official_personal_website/bin/pip3 install gunicorn
+    beautiful_flask_tables/bin/pip3 install -r requirements.txt && \
+    beautiful_flask_tables/bin/pip3 install gunicorn
 
 COPY app app
 COPY migrations migrations
