@@ -15,7 +15,7 @@ RUN \
     apk add build-base && \ 
     apk add postgresql-dev gcc python3-dev musl-dev && \
     beautiful_flask_tables/bin/pip3 install -r requirements.txt && \
-    beautiful_flask_tables/bin/pip3 install gunicorn
+    beautiful_flask_tables/bin/pip3 install gunicorn pymysql cryptography
 
 COPY app app
 COPY migrations migrations
