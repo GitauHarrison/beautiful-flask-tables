@@ -3,6 +3,7 @@ FROM python:alpine
 RUN adduser -D table
 
 WORKDIR /home/software_development/python/current_projects/beautiful_flask_tables
+
 COPY requirements.txt requirements.txt
 
 RUN python -m venv beautiful_flask_tables
@@ -18,7 +19,7 @@ RUN \
 
 COPY app app
 COPY migrations migrations
-COPY create_fake_users.py create_facke_users.py
+COPY create_fake_users.py create_fake_users.py
 COPY table.py config.py boot.sh ./
 RUN chmod +x boot.sh
 
