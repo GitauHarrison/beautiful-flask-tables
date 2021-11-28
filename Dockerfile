@@ -13,7 +13,7 @@ RUN beautiful_flask_tables/bin/python -m pip install --upgrade pip
 RUN \
     apk update && \
     apk add build-base && \ 
-    apk add postgresql-dev gcc python3-dev musl-dev && \
+    apk add postgresql-dev gcc python3-dev musl-dev libffi-dev && \
     beautiful_flask_tables/bin/pip3 install -r requirements.txt && \
     beautiful_flask_tables/bin/pip3 install gunicorn pymysql cryptography
 
