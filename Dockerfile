@@ -2,8 +2,7 @@ FROM python:alpine
 
 RUN adduser -D table
 
-WORKDIR /home/software_development/python/current_projects/official_personal_website
-
+WORKDIR /home/software_development/python/current_projects/beautiful_flask_tables
 COPY requirements.txt requirements.txt
 
 RUN python -m venv official_personal_website
