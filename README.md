@@ -6,7 +6,7 @@ I was quite worried about how I can create a table in [my personal blog]() and a
 
 - [x] Pagination of data in rows
     * Choose the number of rows to be displayed in the table
-- [x] Searching of data in the entire table 
+- [x] Searching for data in the entire table 
     * The application can search the entire table for a specific word or phrase (slow and not efficient as seen the Basic Table example)
     * The application can search for a specific word or phrase per the paginated data (fast and efficient as seen the Ajax Table example)
 - [x] Sorting of data in the entire table
@@ -22,6 +22,8 @@ I was quite worried about how I can create a table in [my personal blog]() and a
 - [x] [dataTables.js](https://datatables.net//) library to enhance the table
 - [x] [Faker](https://faker.readthedocs.io/en/master/) to generate fake user data
 - [x] AJAX for the front-end
+- [x] Heroku for Deployment
+- [x] Docker for Deployment
 
 Additional technologies used:
 
@@ -52,6 +54,7 @@ The use of Ajax helps to solve this problem. The table is loaded in chunks of da
 ### Deployed Application
 
 - [x] [Flask Table App](https://beautiful-flask-tables.herokuapp.com/) on Heroku
+- [x] [Flask Table App](https://hub.docker.com/r/gitauharrison/table) on Docker
 
 ### Testing
 
