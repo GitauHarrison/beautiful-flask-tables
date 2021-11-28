@@ -12,14 +12,14 @@ from create_fake_users import create_fake_users
 @login_required
 def basic_table():
     admins = Admin.query.all()
-    create_fake_users(2000)
+    create_fake_users(500)
     return render_template('basic-table.html', title='Basic Table', admins=admins)
 
 
 @app.route('/ajax-table', methods=['GET', 'POST'])
 @login_required
 def ajax_table():
-    create_fake_users(2000)
+    create_fake_users(500)
     return render_template('ajax-table.html', title='Ajax Table')
 
 
