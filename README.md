@@ -88,4 +88,6 @@ If you are interested in testing the application, you can use the following comm
 
 ### Reference
 
-- [Interactive Flask Templates](https://blog.miguelgrinberg.com/post/beautiful-interactive-tables-for-your-flask-templates)
+I have made tremendous changes to this application since the original version. The code here is not updated. However, I have an article that goes into greater detail about how this project can be redone in a more structured way. You can read about it [here](https://github.com/GitauHarrison/notes/blob/master/flask_tables.md).
+
+- [Interactive Flask Templates](https://blog.miguelgrinberg.com/post/beautiful-interactive-tables-for-your-flask-templates) - Miguel Grinberg
