@@ -1,20 +1,17 @@
 from app import app, db
 from app.models import User
 from flask import render_template, request
-from create_fake_users import create_fake_users
 
 
 @app.route('/')
 @app.route('/index')
 def index():
-    create_fake_users(1000)
     users = User.query.all()
     return render_template('bootstrap-table.html', users=users, title='Bootstrap Table')
 
 
 @app.route('/basic-table')
 def basic_table():
-    create_fake_users(1000)
     users = User.query.all()
     return render_template('basic-table.html', users=users, title='Basic Table')
 
