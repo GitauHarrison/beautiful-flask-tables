@@ -15,15 +15,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for user in users %}
-                        <tr>
-                            <td>{{ user.username }}</td>
-                            <td>{{ user.age }}</td>
-                            <td>{{ user.email }}</td>
-                            <td>{{ user.phone }}</td>
-                            <td>{{ user.address }}</td>
-                        </tr>
-                    {% endfor %}
+
+                </tbody>
             </table>
         </div>
     </div>
@@ -33,12 +26,14 @@
     <script>
         $(document).ready(function() {
             $('#data').DataTable({
+                ajax: '{{ url_for('server_side_table_data') }}',
+                serverSide: true,
                 columns: [
-                    null,
-                    {searchable: false},
-                    {orderable: false, searchable: false},
-                    {orderable: false, searchable: false},
-                    null
+                    {data: "username"},
+                    {data: "age"},
+                    {data: "email"},
+                    {data: "phone", orderable: false},
+                    {data: "address", orderable: false}
                 ],
             });
         });

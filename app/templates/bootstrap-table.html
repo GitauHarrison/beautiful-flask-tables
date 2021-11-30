@@ -28,19 +28,3 @@
         </div>
     </div>
 {% endblock %}
-
-{% block datatable_scripts %}
-    <script>
-        $(document).ready(function() {
-            $('#data').DataTable({
-                columns: [
-                    null,
-                    {searchable: false},
-                    {orderable: false, searchable: false},
-                    {orderable: false, searchable: false},
-                    null
-                ],
-            });
-        });
-    </script>
-{% endblock %}

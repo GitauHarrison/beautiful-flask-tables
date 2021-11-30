@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
-{% block app_content %}
-    <1>An expected error occurred</1>
-    <p>
-        The administrator has been notified of the problem. Sorry for the inconvenience.
-    </p>
-    <p><a href="{{ url_for('basic_table') }}">Back</a></p>
+{% block app_context %}
+    <div class="row">
+        <div class="col-md-12">
+           <h1>Unexpected Error</h1>
+           <a href=" {{ url_for('index') }} ">Go Home</a>
+        </div>
+    </div>
 {% endblock %}

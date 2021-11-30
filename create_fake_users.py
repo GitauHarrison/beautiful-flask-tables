@@ -1,26 +1,27 @@
-import random
+from app import db
+from app.models import User
+from faker import Faker
+from random import randint
 import sys
-from app.models import Admin
-from app import db, faker
 
 
-def create_fake_users(n):
-    """Generate fake users"""
-    for i in range(n):
-        admin = Admin(
-            username=faker.user_name(),
-            email=faker.email(),
-            age=random.randint(18, 60),
-            address=faker.address().replace('\n', ' '),
-            phone=faker.phone_number()
-        )
-        db.session.add(admin)
+def create_fake_users(total):
+    fake = Faker()
+    for i in range(total):
+        user = User(
+            username=fake.name(),
+            age=randint(18, 100),
+            email=fake.email(),
+            phone=fake.phone_number(),
+            address=fake.address()
+            )
+        db.session.add(user)
     db.session.commit()
-    print('Generated {} fake users to the database'.format(n))
+    print(f'Created {total} fake users and added them to the database')
 
 
 if __name__ == '__main__':
     if len(sys.argv) <= 1:
-        print('Pass the number of users you want to create as an argument')
+        print('Please provide the number of users as an argument')
         sys.exit(1)
     create_fake_users(int(sys.argv[1]))
