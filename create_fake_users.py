@@ -9,7 +9,7 @@ def create_fake_users(total):
     fake = Faker()
     for i in range(total):
         user = User(
-            username=fake.name(),
+            username=fake.user_name(),
             age=randint(18, 100),
             email=fake.email(),
             phone=fake.phone_number(),
