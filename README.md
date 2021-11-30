@@ -25,31 +25,50 @@ I was quite worried about how I can create a table in [my personal blog]() and a
 - [x] Heroku for Deployment
 - [x] Docker for Deployment
 
-Additional technologies used:
+## Types of Tables on Display
 
-- [x] Flask login for authentication
-- [x] Flask-WTF for forms
-- [x] Flask-Migrate for database migrations
+1. [Bootstrap Table](#bootstrap-table)
+2. [Basic Table](#basic-table)
+3. [Ajax Table](#ajax-table)
+4. [Server-side Table](#server-side-table)
+
+### Bootstrap Table
+
+Creating a table in flask is very easy. All you need to do is define a table structure and display all the users in the table.
+
+![Bootstrap Table](app/static/bootstrap-table.png)
+
 
 ### Basic Table
 
-The basic table is a table that displays all the data in the database. I call it basic in the sense that it is quite good for the purposes of displaying short data. However, it is not very efficient as it is slow to load extremely large data. 
+The basic table is a table that displays all the data in the database, just like the bootstrap table. I call it basic in the sense that it is quite good for the purposes of displaying short data. However, it is not very efficient displaying large data. 
 
 The biggest shortcoming of the basic table, which simply shows all the user data in our database, is that, for a few seconds on page load, this table will display the entire table before pagination kicks in. In the event that the data is too large, a user will have to patiently wait as the route 'does its thing' before the actual final table is displayed.
 
-###### Table when the page is loading for the first few seconds:
+#### Table when the page is loading for the first few seconds
 
 ![Table on Page Load](app/static/basic-table-on-page-load.png)
 
-###### Table when the page is fully loaded:
+#### Table when the page is fully loaded
 
-![Table on Page Load](app/static/app.png)
+![Table on Page Load](app/static/basic-table-on-page-load-full.png)
 
 ### Ajax Table
 
-The use of Ajax helps to solve this problem. The table is loaded in chunks of data, which is then displayed on the screen. Also, searching is conviniently done on the server side. This improves the performance of the application. A user can search for a specific word or phrase in the entire table in an instant, without waiting for several seconds for Python to load the searched data.
+The use of Ajax helps to solve the problem faced by the basic table. Here, the table is first loaded empty when the request to access the ajax table is made. A second endpoint is used to display the data in the table. However, there is still a slight problem with this table. If the data is too large, the table will be empty for a few seconds before the actual data is displayed. This is because the entire table has to be loaded first, and this may take time depending on the size of the data.
 
-![Searching in Ajax Table](app/static/search_alex.png)
+#### Ajax Table when the page is loading for the first few seconds
+
+![Ajax Table on Page Load](app/static/ajax-table-on-page-load.png)
+
+#### Ajax Table when the page is fully loaded
+![Searching in Ajax Table](app/static/ajax-table-on-page-load-full.png)
+
+### Server-side Table
+
+With the server-side table, all features such as pagingaion, searching, and sorting are implemented on the server side. This is a very efficient way to display large data. When a request for the paginated server-side table is made, only the data found in the particular page will be displayed. If a user navigates to another page, then a new request for the data in the next page will be made. As such, only needed data is loaded and displayed. It is a better solution but it is a bit more involved to implement. Features such as searching and sorting have to be moved from the client side to the server side. 
+
+![Server-side Table](app/static/server-side-table.png)
 
 ### Deployed Application
 
@@ -87,7 +106,5 @@ If you are interested in testing the application, you can use the following comm
     - [x] [Safari](http://127.0.0.1:5000/)
 
 ### Reference
-
-I have made tremendous changes to this application since the original version. The code here is not updated. However, I have an article that goes into greater detail about how this project can be redone in a more structured way. You can read about it [here](https://github.com/GitauHarrison/notes/blob/master/flask_tables.md).
 
 - [Interactive Flask Templates](https://blog.miguelgrinberg.com/post/beautiful-interactive-tables-for-your-flask-templates) - Miguel Grinberg
