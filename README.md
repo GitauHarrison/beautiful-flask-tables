@@ -2,6 +2,8 @@
 
 I was quite worried about how I can create a table in [my personal blog]() and add table functionalities that will allow me to quickly access any particular data. In the case where the data in the tables is too large, the addition of pagination was extremely necessary. Also, loading the data in the table as efficiently as possible would help improve the experience of working with my blog application.
 
+![Beautiful and Functional Flask Tables](app/static/beautiful_flask_tables.gif)
+
 ## Features
 
 - [x] Pagination of data in rows
