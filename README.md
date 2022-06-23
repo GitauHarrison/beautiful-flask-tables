@@ -87,7 +87,7 @@ If you are interested in testing the application, you can use the following comm
 1. Clone this repository:
 
     `$ git clone git@github.com:GitauHarrison/beautiful-flask-tables.git`
-<br>
+    <br>
 
 2. Change directory to access the application:
 
@@ -117,3 +117,7 @@ If you are interested in testing the application, you can use the following comm
 
 - [Interactive Flask Templates](https://blog.miguelgrinberg.com/post/beautiful-interactive-tables-for-your-flask-templates) - Miguel Grinberg
 - [Beautiful Flask Tables](https://github.com/GitauHarrison/notes/blob/master/flask_tables.md) - me
+
+### Going Further
+
+The use of JQuery is currently obsolete. This makes DataTables.js outdated because it relies on JQuery. Check out the updated version of this project [here](https://github.com/GitauHarrison/notes/blob/master/flask_tables/gridjs.md) where I show how to work with Grid.js.
