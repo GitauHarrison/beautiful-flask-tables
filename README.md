@@ -77,30 +77,36 @@ With the server-side table, all features such as pagingaion, searching, and sort
 - [x] [Flask Table App](https://beautiful-flask-tables.herokuapp.com/) on Heroku
 - [x] [Flask Table App](https://hub.docker.com/r/gitauharrison/table) on Docker
 
+**NOTE:** 
+If you test the application on the Heroku server, you might find "Unexpected Error". This is because Heroku provides a limited amount for database storage. The application currently autogenerates hundreds of users who, by the time you access the applcation, Heroku might have disabled its database for exceeding the storage limit on the free tier version.
+
 ### Testing
 
 If you are interested in testing the application, you can use the following commands to run the application:
 
 1. Clone this repository:
 
-`$ git clone git@github.com:GitauHarrison/beautiful-flask-tables.git`
+    `$ git clone git@github.com:GitauHarrison/beautiful-flask-tables.git`
+<br>
 
 2. Change directory to access the application:
 
-`$ cd beautiful-flask-tables`
+    `$ cd beautiful-flask-tables`
+    <br>
 
 3. Create and activate the virtual environment:
 
-`$ mkvirtualenv flask-tables`
+    `$ mkvirtualenv flask-tables`
+    <br>
 
 4. Install dependencies:
 
-`$ pip3 install -r requirements.txt`
-
+    `$ pip3 install -r requirements.txt`
+    <br>
 5. Run the application:
 
-`$ flask run`
-
+    `$ flask run`
+    <br>
 6. Open the application in your browser running on local port 5000:
 
     - [x] [Chrome](http://127.0.0.1:5000/)
