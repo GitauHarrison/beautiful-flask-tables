@@ -72,10 +72,6 @@ With the server-side table, all features such as pagingaion, searching, and sort
 
 ![Server-side Table](app/static/server-side-table.png)
 
-### Deployed Application
-
-- [x] [Flask Table App](https://beautiful-flask-tables.herokuapp.com/) on Heroku
-- [x] [Flask Table App](https://hub.docker.com/r/gitauharrison/table) on Docker
 
 ### Testing
 
