@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block app_context %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>{{ title }}</h1>
+            <table id="data" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Age</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.age }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.phone }}</td>
+                            <td>{{ user.address }}</td>
+                        </tr>
+                    {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+{% block datatable_scripts %}
+    <script>
+        $(document).ready(function() {
+            $('#data').DataTable({
+                columns: [
+                    null,
+                    {searchable: false},
+                    {orderable: false, searchable: false},
+                    {orderable: false, searchable: false},
+                    null
+                ],
+            });
+        });
+    </script>
+{% endblock %}

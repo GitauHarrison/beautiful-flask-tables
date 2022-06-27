@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block app_context %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>{{ title }}</h1>
+            <table id="data" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Age</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+{% block datatable_scripts %}
+    <script>
+        $(document).ready(function() {
+            $('#data').DataTable({
+                ajax: '{{ url_for('server_side_table_data') }}',
+                serverSide: true,
+                columns: [
+                    {data: "username"},
+                    {data: "age"},
+                    {data: "email"},
+                    {data: "phone", orderable: false},
+                    {data: "address", orderable: false}
+                ],
+            });
+        });
+    </script>
+{% endblock %}

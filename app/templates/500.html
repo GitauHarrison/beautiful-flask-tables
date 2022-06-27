@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block app_context %}
+    <div class="row">
+        <div class="col-md-12">
+           <h1>Unexpected Error</h1>
+           <a href=" {{ url_for('index') }} ">Go Home</a>
+        </div>
+    </div>
+{% endblock %}
