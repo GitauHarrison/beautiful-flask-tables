@@ -73,6 +73,21 @@ With the server-side table, all features such as pagingaion, searching, and sort
 
 ![Server-side Table](app/static/server-side-table.png)
 
+### Using DataTables.js
+
+- Add the CSS file in the `head` block:
+
+    ```css
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.css">
+    ```
+- Then, update the `scripts` block to include the DataTables.js library
+
+    ```js
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.js"></script>
+    ```
+
 
 ### Testing
 
