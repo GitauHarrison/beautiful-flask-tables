@@ -110,7 +110,7 @@ If you are interested in testing the application, you can use the following comm
 ### Reference
 
 - [Interactive Flask Templates](https://blog.miguelgrinberg.com/post/beautiful-interactive-tables-for-your-flask-templates) - Miguel Grinberg
-- [Beautiful Flask Tables](https://github.com/GitauHarrison/notes/blob/master/flask_tables.md) - me
+- [Beautiful Flask Tables](https://github.com/GitauHarrison/notes/blob/master/flask_tables/flask_tables.md) - me
 
 ### Going Further
 
