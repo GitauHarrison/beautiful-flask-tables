@@ -73,6 +73,14 @@ With the server-side table, all features such as pagingaion, searching, and sort
 
 ![Server-side Table](app/static/server-side-table.png)
 
+### Deployed Application
+
+- [x]  [Flask Table](https://beautiful-flask-tables.herokuapp.com/) App on Heroku
+- [x] [Flask Table](https://hub.docker.com/r/gitauharrison/table) App on Docker
+- [x] [Flask table](https://beautiful-flask-tables.onrender.com) on Render
+
+NOTE: If you test the application on the Heroku server, you might find "Unexpected Error". This is because Heroku provides a limited amount for database storage. The application currently autogenerates hundreds of users who, by the time you access the applcation, Heroku might have disabled its database for exceeding the storage limit on the free tier version.
+
 ### Using DataTables.js
 
 - Add the CSS file in the `head` block:
